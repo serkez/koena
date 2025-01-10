@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #4a4a4a;
+}
+.navbar {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+  padding-top: 1.5rem;   
+  padding-bottom: 1.5rem; 
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23551263' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");}
+
+
+.navbar-brand, .nav-link {
+  color: #551263 !important;
+}
+
+.btn-primary {
+  background-color: #551263;
+  border: none;
+}
+.navbar-nav .nav-link:hover{
+  color: #f9bb16 !important;
+  text-decoration: underline;
+  text-decoration-color: #f9bb16;
+}
+.active {
+  text-decoration: underline;
+  text-decoration-color: #f9bb16;
+}
+.btn-primary:hover {
+  background-color: #551263;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #551263;
+}
+
+#hero {
+  background-image: url("../img/essential_oil_background_faded_thin.jpeg");
+  color:#551263;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 66vh; /* 2/3 of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.lead {
+  font-size: larger;
+}
+
+#welcome .container {
+  z-index: 1; /* Makes sure text appears above background */
+}
+
+#welcome h1 {
+  font-size: 3rem;
+}
+
+#welcome p {
+  font-size: 1.25rem;
+}
+
+.small-image {
+  max-width: 55%;
+  height: auto;
+}
+
+.section-section-title {
+  font-size: 2.5rem; /* Adjust as needed */
+  font-weight: bold; /* Optional for emphasis */
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.85rem; /* Adjust as needed */
+}
+
+.head {
+  font-size: 2.75rem;
+}
+
+
+
+@media (min-width: 992px) {
+  #about {
+    border: 8px solid #f9bb16; /* Border color and thickness */
+    border-radius: 3px;   
+    padding: 100px; 
+    padding-left: 0px;
+    margin: 40px 80px;
+    background-color: #ffffff;
+    font-size: larger;
+  }
+  .about-title {
+    padding-left: 100px;
+  }
+}
+
+
+html {
+  scroll-padding-top: 110px; /* Adjust this to match your header's height */
+}
+
+/* foote style not working */
+footer {
+  background-color: #551263;
+  color: #f9bb16;
+
+  background-color: #290331;
+  color: #f9bb16;
+}
+
+.icon i{
+  color: #f9bb16;
+}
+
+.icon i:hover {
+  color: #9b750c;
+}
+
+.subtle {
+  color: #8d6e1b;
+  font-size: smaller;
+}
+
+.subtle a {
+  color: #b78b13;
+  text-decoration: none;
+}
+
+.subtle a:hover {
+  color: #ddb034;
+}
