@@ -12,50 +12,57 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeLink) activeLink.classList.add('active');
     };
 
-// Function to update active link on scroll
-document.addEventListener('scroll', function () {
-    const sections = document.querySelectorAll('section'); // All sections to track
-    const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link'); // Navbar links
-    const offset = 150; // Offset for navbar height or padding
-    let currentSectionId = '';
+    // Function to update active link on scroll
+    document.addEventListener('scroll', function () {
+        const sections = document.querySelectorAll('section'); // All sections to track
+        const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link'); // Navbar links
+        const offset = 150; // Offset for navbar height or padding
+        let currentSectionId = '';
 
-    // Determine which section is currently in view
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - offset;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            currentSectionId = section.getAttribute('id'); // Get the section ID
-        }
-    });
+        // Determine which section is currently in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - offset;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id'); // Get the section ID
+            }
+        });
 
-    // Update active link based on the current section
-    navbarLinks.forEach(link => {
-        if (link.getAttribute('href').substring(1) === currentSectionId) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+        // Update active link based on the current section
+        navbarLinks.forEach(link => {
+            if (link.getAttribute('href').substring(1) === currentSectionId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     });
-});
 
     // Click Event Listener
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
+            const targetHref = link.getAttribute('href');
 
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
-                    behavior: 'smooth',
-                });
+            // Check if it's an internal link (starts with #)
+            if (targetHref.startsWith('#')) {
+                e.preventDefault(); // Prevent default behavior for internal links
+                const targetId = targetHref.substring(1);
+                const targetSection = document.getElementById(targetId);
 
-                addActiveClass(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
+                        behavior: 'smooth',
+                    });
+
+                    addActiveClass(targetId);
+                }
             }
+            // External links (e.g., Instagram) are not prevented
         });
     });
 });
+
 
 document.addEventListener('scroll', function () {
     const navbarToggler = document.querySelector('.navbar-toggler'); // The toggle button
