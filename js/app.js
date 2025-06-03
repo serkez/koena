@@ -74,12 +74,19 @@ document.addEventListener('scroll', function () {
     }
 });
 
-document.querySelector("form")?.addEventListener("submit", function (e) {
-    // delay so Formspree still submits the data
-    setTimeout(() => {
-      this.reset();
-    }, 100);
-}); 
+window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("submitted") === "true") {
+      // Clear the form
+      document.querySelector("form")?.reset();
+
+      // Scroll to top
+      window.scrollTo(0, 0);
+
+      // Clean up the URL
+      history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
   
 // document.addEventListener("DOMContentLoaded", function () {
 //     const languageOptions = document.querySelectorAll(".language-option");
