@@ -143,3 +143,26 @@ footer {
 .subtle a:hover {
   color: #ddb034;
 }
+
+
+
+/* Default: Left-to-Right */
+body {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Right-to-Left for Hebrew */
+[lang="he"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+[lang="he"] .navbar-nav {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[lang="he"] .dropdown-menu {
+  text-align: right;
+}

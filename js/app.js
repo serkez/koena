@@ -73,3 +73,95 @@ document.addEventListener('scroll', function () {
         navbarToggler.click(); // Programmatically click the toggler to close the menu
     }
 });
+
+document.querySelector("form")?.addEventListener("submit", function (e) {
+    // delay so Formspree still submits the data
+    setTimeout(() => {
+      this.reset();
+    }, 100);
+}); 
+  
+// document.addEventListener("DOMContentLoaded", function () {
+//     const languageOptions = document.querySelectorAll(".language-option");
+
+//     languageOptions.forEach(option => {
+//         option.addEventListener("click", function (event) {
+//             event.preventDefault();
+//             const selectedLang = this.getAttribute("data-lang");
+
+//             // Store language preference
+//             localStorage.setItem("selectedLang", selectedLang);
+
+//             // Apply language settings
+//             applyLanguage(selectedLang);
+//         });
+//     });
+
+//     // Check stored language preference
+//     const savedLang = localStorage.getItem("selectedLang") || "en";
+//     applyLanguage(savedLang);
+// });
+
+// function applyLanguage(lang) {
+//     document.documentElement.setAttribute("lang", lang);
+
+//     if (lang === "he") {
+//         document.documentElement.setAttribute("dir", "rtl");
+//         document.body.classList.add("rtl");
+//         document.body.classList.remove("ltr");
+
+//         // Enable RTL stylesheet
+//         document.getElementById("rtl-style").removeAttribute("disabled");
+//     } else {
+//         document.documentElement.setAttribute("dir", "ltr");
+//         document.body.classList.add("ltr");
+//         document.body.classList.remove("rtl");
+
+//         // Disable RTL stylesheet
+//         document.getElementById("rtl-style").setAttribute("disabled", "true");
+//     }
+
+//     // Apply text translations
+//     const translations = {
+//         "en": {
+//             "welcome": "Welcome to Koena",
+//             "welcome_subtitle": "Workshops to elevate and enrich your wellness journey.",
+//             "miriam": "Miriam",
+//             "about_miriam": "About The Founder",
+//             "about": "About Us",
+//             "about": "About Us",
+//             "services": "Services",
+//             "contact": "Contact Us",
+//             "sendMessage": "Send Message",
+//             "name": "Name",
+//             "email": "Email",
+//             "message": "Message"
+//         },
+//         "he": {
+//             "welcome": "ברוכים הבאים לקואנה",
+//             "welcome_subtitle": "סדנאות להעלאת והעשרת מסע הבריאות שלך.",
+//             "miriam": "מרים סרקז",
+//             "about_miriam": "אודותינו",
+//             "about": "אודותינו",
+//             "services": "שירותים",
+//             "contact": "צור קשר",
+//             "sendMessage": "שלח הודעה",
+//             "name": "שם",
+//             "email": "אימייל",
+//             "message": "הודעה"
+//         }
+//     };
+
+//     // Update text content
+//     document.querySelector("#welcome-to-koena").textContent = translations[lang].welcome;
+//     document.querySelector("#welcome-subtitle").textContent = translations[lang].welcome_subtitle;
+//     document.querySelector("#miriam").textContent = translations[lang].miriam;
+//     document.querySelector("#about-miriam").textContent = translations[lang].about_miriam;
+//     document.querySelector("#about h2").textContent = translations[lang].about;
+//     document.querySelector("#services h2").textContent = translations[lang].services;
+//     document.querySelector("#contact h2").textContent = translations[lang].contact;
+//     document.querySelector("button[type='submit']").textContent = translations[lang].sendMessage;
+//     document.querySelector("label[for='name']").textContent = translations[lang].name;
+//     document.querySelector("label[for='email']").textContent = translations[lang].email;
+//     document.querySelector("label[for='message']").textContent = translations[lang].message;
+// }
